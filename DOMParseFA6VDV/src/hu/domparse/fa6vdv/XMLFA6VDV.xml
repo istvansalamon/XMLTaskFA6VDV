@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<onlinevasarlas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="xdmschema_FA6vdv.xsd">
+
+    <rendeles rendelesid="R1" R-V_K="RVK1">
+        <rendeles_datuma>2023-01-01</rendeles_datuma>
+        <szallitasi_cim>
+            <irsz>1328</irsz>
+            <varos>Budapest</varos>
+            <utca>Kossuth utca</utca>
+            <hsz>12</hsz>
+        </szallitasi_cim>
+        <osszeg>14990</osszeg>
+
+    </rendeles>
+
+    <rendeles rendelesid="R2" R-V_K="RVK2">
+        <rendeles_datuma>2023-01-01</rendeles_datuma>
+        <szallitasi_cim>
+            <irsz>3300</irsz>
+            <varos>Eger</varos>
+            <utca>Dobó </utca>
+            <hsz>56</hsz>
+        </szallitasi_cim>
+        <osszeg>8990</osszeg>
+    </rendeles>
+
+
+    <felhasznalo felhasznaloid="F1">
+        <felhasznalonev>szabi</felhasznalonev>
+        <email>szabi.lantos@freemail.com</email>
+        <regisztracio_datuma>2022-12-02</regisztracio_datuma>
+    </felhasznalo>
+
+    <felhasznalo felhasznaloid="F2">
+        <felhasznalonev>evike</felhasznalonev>
+        <email>evike@citromail.com</email>
+        <regisztracio_datuma>2016-04-15</regisztracio_datuma>
+    </felhasznalo>
+
+    <profil profilid="E1">
+        <nev>Lantos Szabolcs</nev>
+        <telefonszam>+36205555444</telefonszam>
+        <utolso_belepes_datuma>2023-10-02</utolso_belepes_datuma>
+    </profil>
+
+    <profil profilid="E2">
+        <nev>Nagy Éva</nev>
+        <telefonszam>+36209453264</telefonszam>
+        <utolso_belepes_datuma>2023-09-30</utolso_belepes_datuma>
+    </profil>
+
+    <fizetes fizetesid="T1">
+        <osszeg>14990</osszeg>
+        <tranzakcio_datuma>2023-10-02</tranzakcio_datuma>
+        <fizetesimod>Kártya</fizetesimod>
+    </fizetes>
+
+    <fizetes fizetesid="T2">
+        <osszeg>8990</osszeg>
+        <tranzakcio_datuma>2023-09-30</tranzakcio_datuma>
+        <fizetesimod>Kártya</fizetesimod>
+    </fizetes>
+
+    <termek termekid="P1" T-V_K="TVK1">
+        <termeknev>Egér</termeknev>
+        <ar>4990</ar>
+        <keszlet>10</keszlet>
+    </termek>
+
+    <termek termekid="P2" T-V_K="TVK2">
+        <termeknev>Billentyűzet</termeknev>
+        <ar>12000</ar>
+        <keszlet>25</keszlet>
+    </termek>
+
+    <termek termekid="P3" T-V_K="TVK3">
+        <termeknev>ssd 256</termeknev>
+        <ar>8990</ar>
+        <keszlet>5</keszlet>
+    </termek>
+
+    <termek termekid="P4" T-V_K="TVK4">
+        <termeknev>usb kábel</termeknev>
+        <ar>500</ar>
+        <keszlet>8</keszlet>
+    </termek>
+
+
+    <vasarlas >
+        <szemelyes>0</szemelyes>
+        <online>2</online>
+    </vasarlas>
+
+</onlinevasarlas>

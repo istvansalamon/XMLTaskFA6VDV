@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+elementFormDefault="qualified">
+
+	<!-- Felepites -->
+
+	<xs:element name="onlinevasarlas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rendeles" type="rendelesTipus" maxOccurs="unbounded"/>
+                <xs:element name="felhasznalo" type="felhasznaloTipus" maxOccurs="unbounded"/>
+                <xs:element name="profil" type="profilTipus" maxOccurs="unbounded"/>
+                <xs:element name="fizetes" type="fizetesTipus" maxOccurs="unbounded"/>
+                <xs:element name="termek" type="termekTipus" maxOccurs="unbounded"/>
+                <xs:element name="vasarlas" type="vasarlasTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+
+
+    <!-- elsodleges kulcsok -->
+    <xs:key name="rendeles_kulcs">
+        <xs:selector xpath="rendeles" />
+        <xs:field xpath="@rendelesid" />
+    </xs:key>
+
+    <xs:key name="felhasznalo_kulcs">
+        <xs:selector xpath="felhasznalo" />
+        <xs:field xpath="@felhasznaloid" />
+    </xs:key>
+
+    <xs:key name="profil_kulcs">
+        <xs:selector xpath="profil" />
+        <xs:field xpath="@profilid" />
+    </xs:key>
+
+    <xs:key name="fizetes_kulcs">
+        <xs:selector xpath="fizetes" />
+        <xs:field xpath="@fizetesid" />
+    </xs:key>
+
+    <xs:key name="termek_kulcs">
+        <xs:selector xpath="termek" />
+        <xs:field xpath="@termekid" />
+    </xs:key>
+
+
+    <!-- idegen kulcsok -->
+
+     <xs:keyref refer="rendeles_kulcs" name="rendeles_idegen_kulcs">
+        <xs:selector xpath="vasarlas" />
+        <xs:field xpath="@R-V_K" />
+    </xs:keyref>
+
+    <xs:keyref refer="termek_kulcs" name="termek_idegen_kulcs">
+        <xs:selector xpath="vasarlas" />
+        <xs:field xpath="@T-V_K" />
+    </xs:keyref>
+
+
+    <!-- 1 : 1 kapcsolatok -->
+    <xs:unique name="unique_profil">
+        <xs:selector xpath="profil" />
+        <xs:field xpath="@profilid" />
+    </xs:unique>
+
+</xs:element>
+
+<!-- ComplexType Tipusok -->
+
+<xs:complexType name="rendelesTipus">
+            <xs:sequence>
+                <xs:element name="rendeles_datuma" type="xs:date" />
+                <xs:element name="szallitasi_cim" type="cimTipus" />
+                <xs:element name="osszeg" type="xs:integer" />
+            </xs:sequence>
+            <xs:attribute name="rendelesid" type="xs:string"  use="required" />
+            <xs:attribute name="R-V_K" type="xs:string"  use="required" />
+</xs:complexType>
+
+<xs:complexType name="cimTipus">
+            <xs:sequence>
+                <xs:element name="irsz" type="xs:integer" />
+                <xs:element name="varos" type="xs:string" />
+                <xs:element name="utca" type="xs:string" />
+                <xs:element name="hsz" type="xs:integer" />
+            </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="felhasznaloTipus">
+            <xs:sequence>
+                <xs:element name="felhasznalonev" type="xs:string" />
+                <xs:element name="email" type="xs:string" />
+                <xs:element name="regisztracio_datuma" type="xs:date" />
+            </xs:sequence>
+            <xs:attribute name="felhasznaloid" type="xs:string"  use="required" />
+</xs:complexType>
+
+<xs:complexType name="profilTipus">
+            <xs:sequence>
+                <xs:element name="nev" type="xs:string" />
+                <xs:element name="telefonszam" type="xs:string" />
+                <xs:element name="utolso_belepes_datuma" type="xs:date" />
+            </xs:sequence>
+            <xs:attribute name="profilid" type="xs:string"  use="required" />
+</xs:complexType>
+
+<xs:complexType name="fizetesTipus">
+            <xs:sequence>
+                <xs:element name="osszeg" type="xs:integer" />
+                <xs:element name="tranzakcio_datuma" type="xs:date" />
+                <xs:element name="fizetesimod" type="xs:string" />
+
+            </xs:sequence>
+            <xs:attribute name="fizetesid" type="xs:string"  use="required" />
+</xs:complexType>
+
+<xs:complexType name="termekTipus">
+            <xs:sequence>
+                <xs:element name="termeknev" type="xs:string" />
+                <xs:element name="ar" type="xs:integer" />
+                <xs:element name="keszlet" type="xs:integer" />
+            </xs:sequence>
+            <xs:attribute name="termekid" type="xs:string"  use="required" />
+            <xs:attribute name="T-V_K" type="xs:string"  use="required" />
+
+</xs:complexType>
+
+    <xs:complexType name="vasarlasTipus">
+        <xs:sequence>
+            <xs:element name="szemelyes" type="xs:string" />
+            <xs:element name="online" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

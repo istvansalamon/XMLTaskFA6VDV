@@ -1,0 +1,101 @@
+<?xml version="1.0" encodin="UTF-8"?
+<onlinevasarlas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="xdmschemaFA6vdv.xsd">
+    
+    <rendeles rendelesID="R1">
+        <rendeles_datuma>2023-01-01</rendeles_datuma>
+        <szallitasi_cim>
+            <irsz>1328</irsz>
+            <varos>Budapest</varos>
+            <utca>Kossuth utca</utca>
+            <hsz>12</hsz>
+        </szallitasi_cim>
+        <osszeg>14990</osszeg>
+    </rendeles>
+	
+	<rendeles rendelesID="R2">
+        <rendeles_datuma>2023-01-01</rendeles_datuma>
+        <szallitasi_cim>
+            <irsz>3300</irsz>
+            <varos>Eger</varos>
+            <utca>Dobó </utca>
+            <hsz>56</hsz>
+        </szallitasi_cim>
+        <osszeg>8990</osszeg>
+    </rendeles>
+	
+
+    <felhasznalo felhasznaloID="F1">
+        <felhasznalonev>szabi</felhasznalonev>
+        <email>szabi.lantos@freemail.com</email>
+        <regisztracio_datuma>2022-12-02</regisztracio_datuma>
+    </felhasznalo>
+	
+	<felhasznalo felhasznaloID="F2">
+        <felhasznalonev>evike</felhasznalonev>
+        <email>evike@citromail.com</email>
+        <regisztracio_datuma>2016-04-15</regisztracio_datuma>
+    </felhasznalo>
+
+    <profil ProfilID="E1">
+        <nev>Lantos Szabolcs</nev>
+        <telefonszam>+36205555444</telefonszam>
+        <utolso_belepes_datuma>2023-10-02</utolso_belepes_datuma>
+    </profil>
+	
+	<profil ProfilID="E1">
+        <nev>Nagy Éva</nev>
+        <telefonszam>+36209453264</telefonszam>
+        <utolso_belepes_datuma>2023-09-30</utolso_belepes_datuma>
+    </profil>
+
+    <fizetes tranzakcioID="T1">
+        <osszeg>14990</osszeg>
+        <tranzakcio_datuma>2023-10-02</tranzakcio_datuma>
+        <fizetesimod>Kártya</fizetesimod>
+    </fizetes>
+	
+	<fizetes tranzakcioID="T2">
+        <osszeg>8990</osszeg>
+        <tranzakcio_datuma>2023-09-30</tranzakcio_datuma>
+        <fizetesimod>Kártya</fizetesimod>
+    </fizetes>
+
+    <termek termekID="P1">
+        <termeknev>Egér</termeknev>
+        <ar>4990</ar>
+        <keszlet>10</keszlet>
+    </termek>
+	
+	<termek termekID="P2">
+        <termeknev>Billentyűzet</termeknev>
+        <ar>12000</ar>
+        <keszlet>25</keszlet>
+    </termek>
+	
+	<termek termekID="P3">
+        <termeknev>ssd 256</termeknev>
+        <ar>8990</ar>
+        <keszlet>5</keszlet>
+    </termek>
+	
+	<termek termekID="P4">
+        <termeknev>usb kábel</termeknev>
+        <ar>500</ar>
+        <keszlet>8</keszlet>
+    </termek>
+	
+	
+    <vasarlas R-V_K="R1" T-V_K="P1">
+        <mennyiseg>2</mennyiseg>
+        <osszeg>17990</osszeg>
+        <szallitasi_statusz>kiszállítva</szallitasi_statusz>
+    </vasarlas>
+	
+	<vasarlas R-V_K="R2" T-V_K="P2">
+        <mennyiseg>1</mennyiseg>
+        <osszeg>8990</osszeg>
+        <szallitasi_statusz>folyamatban</szallitasi_statusz>
+    </vasarlas>
+	
+</onlinevasarlas>

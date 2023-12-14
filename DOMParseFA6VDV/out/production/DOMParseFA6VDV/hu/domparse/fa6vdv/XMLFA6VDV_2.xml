@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<onlinevasarlas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xdmschema_FA6vdv.xsd">
+  <rendeles R-V_K="RVK1" rendelesid="R1">
+    <rendeles_datuma>2023-01-01</rendeles_datuma>
+    <szallitasi_cim>
+      <irsz>1328</irsz>
+      <varos>Budapest</varos>
+      <utca>Kossuth utca</utca>
+      <hsz>12</hsz>
+    </szallitasi_cim>
+    <osszeg>14990</osszeg>
+  </rendeles>
+  <rendeles R-V_K="RVK2" rendelesid="R2">
+    <rendeles_datuma>2023-01-01</rendeles_datuma>
+    <szallitasi_cim>
+      <irsz>3300</irsz>
+      <varos>Eger</varos>
+      <utca>Dobó</utca>
+      <hsz>56</hsz>
+    </szallitasi_cim>
+    <osszeg>8990</osszeg>
+  </rendeles>
+  <felhasznalo felhasznaloid="F1">
+    <felhasznalonev>szabi</felhasznalonev>
+    <email>szabi.lantos@freemail.com</email>
+    <regisztracio_datuma>2022-12-02</regisztracio_datuma>
+  </felhasznalo>
+  <felhasznalo felhasznaloid="F2">
+    <felhasznalonev>evike</felhasznalonev>
+    <email>evike@citromail.com</email>
+    <regisztracio_datuma>2016-04-15</regisztracio_datuma>
+  </felhasznalo>
+  <profil profilid="P1">
+    <nev>John Doe</nev>
+    <telefonszam>06204455788</telefonszam>
+    <utolso_belepes_datuma>2023-04-22</utolso_belepes_datuma>
+  </profil>
+  <profil profilid="P2">
+    <nev>Jane Doe</nev>
+    <telefonszam>06301455789</telefonszam>
+    <utolso_belepes_datuma>2023-02-01</utolso_belepes_datuma>
+  </profil>
+  <termek T-V_K="TVK1" termekid="T1">
+    <termeknev>Laptop</termeknev>
+    <ar>250000</ar>
+    <keszlet>20</keszlet>
+  </termek>
+  <termek T-V_K="TVK2" termekid="T2">
+    <termeknev>Mobil telefon</termeknev>
+    <ar>80000</ar>
+    <keszlet>50</keszlet>
+  </termek>
+</onlinevasarlas>
