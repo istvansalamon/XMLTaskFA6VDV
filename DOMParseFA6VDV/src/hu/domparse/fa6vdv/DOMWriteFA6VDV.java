@@ -6,6 +6,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.StringWriter;
 
 public class DOMWriteFA6VDV {
 
@@ -17,7 +18,7 @@ public class DOMWriteFA6VDV {
         addDataToDocument(document);
 
         // XML fájlba írás
-        writeXMLDocument(document, "C:\\Users\\z648505\\IdeaProjects\\DOMParseFA6VDV\\src\\hu\\domparse\\fa6vdv\\XMLFA6VDV_1.xml");
+        writeXMLDocument(document, "C:\\Users\\z648505\\IdeaProjects\\DOMParseFA6VDV\\src\\hu\\domparse\\fa6vdv\\XMLFA6VDV_2.xml");
     }
 
     private static void writeXMLDocument(Document document, String filePath) {
@@ -43,6 +44,17 @@ public class DOMWriteFA6VDV {
 
         // Végrehajtja a transzformációt és kiírja az XML-t a fájlba
         transformer.transform(source, result);
+
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+
+            StringWriter writer = new StringWriter();
+            transformer.transform(new DOMSource(document), new StreamResult(writer));
+            String xmlString = writer.getBuffer().toString();
+
+            System.out.println(xmlString);
 
         System.out.println("Az XML dokumentum kiírása sikeres volt.");
     } catch (Exception e) {

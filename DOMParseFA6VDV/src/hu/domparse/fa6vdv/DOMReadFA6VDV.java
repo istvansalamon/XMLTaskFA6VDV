@@ -18,9 +18,6 @@ public class DOMReadFA6VDV {
 
             // Dokumentum feldolgozása
             processDocument(document);
-            //processElement(document);
-            //document.getDocumentElement().normalize();
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -28,45 +25,57 @@ public class DOMReadFA6VDV {
     }
 
     private static void processDocument(Document document) {
-        // Az összes elem feldolgozása
-        NodeList rootNodes = document.getChildNodes();
-        for (int i = 0; i < rootNodes.getLength(); i++) {
-            Node rootNode = rootNodes.item(i);
-            if (rootNode.getNodeType() == Node.ELEMENT_NODE) {
-                // Az összes gyerekelem feldolgozása
-                processElement(rootNode);
-            }
-        }
+        // Dokumentum kiírása a konzolra
+        printNode(document.getDocumentElement(), 0);
     }
 
-    private static void processElement(Node element) {
+    private static void printNode(Node node, int indentLevel) {
+        // Behúzás hozzáadása
+        for (int i = 0; i < indentLevel; i++) {
+            System.out.print("  ");
+        }
 
+        // Az elem neve
+        System.out.print("<" + node.getNodeName());
 
-        if (element.getNodeType() == Node.ELEMENT_NODE) {
-            //Elem neve
-            System.out.println("Elem: " + element.getNodeName());
-
-            // Elem attribútumai
-            NamedNodeMap keys = element.getAttributes();
-            for (int i = 0; i < keys.getLength(); i++) {
-                Node attribute = keys.item(i);
-                System.out.println("kulcs: " + attribute.getNodeName() + " = " + attribute.getNodeValue());
+        // Az elem attribútumai
+        NamedNodeMap attributes = node.getAttributes();
+        if (attributes != null) {
+            for (int i = 0; i < attributes.getLength(); i++) {
+                Node attribute = attributes.item(i);
+                System.out.print(" " + attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
             }
+        }
 
-            // Elem tartalma
-            NodeList children = element.getChildNodes();
+        // Az elem tartalma
+        NodeList children = node.getChildNodes();
+        if (children.getLength() > 0) {
+            System.out.println(">");
             for (int i = 0; i < children.getLength(); i++) {
                 Node child = children.item(i);
                 if (child.getNodeType() == Node.ELEMENT_NODE) {
-                    // feldolgozás a gyerekelemeknél
-                    processElement(child);
+                    printNode(child, indentLevel + 1);
                 } else if (child.getNodeType() == Node.TEXT_NODE && !child.getNodeValue().trim().isEmpty()) {
-                    //tartalom kiírása
-                    System.out.println("tartalom: " + child.getNodeValue().trim());
+                    // Szöveges tartalom kiírása, ha nem üres
+                    for (int j = 0; j < indentLevel + 1; j++) {
+                        System.out.print("  ");
+                    }
+                    System.out.println(child.getNodeValue().trim());
                 }
             }
-
-            System.out.println();// Üres sor elvalasztáshoz
+            // Behúzás a zárótagelemhez
+            for (int i = 0; i < indentLevel; i++) {
+                System.out.print("  ");
+            }
+            System.out.println("</" + node.getNodeName() + ">");
+        } else {
+            // Nincs gyerek, zárást kiírjuk
+            System.out.println("/>");
         }
     }
+
+
+
+
+
 }

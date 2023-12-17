@@ -65,6 +65,12 @@ elementFormDefault="qualified">
         <xs:field xpath="@profilid" />
     </xs:unique>
 
+    <xs:unique name="unique_fizetes">
+        <xs:selector xpath="fizetes" />
+        <xs:field xpath="@fizetesid" />
+    </xs:unique>
+
+
 </xs:element>
 
 <!-- ComplexType Tipusok -->
